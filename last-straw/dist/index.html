@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#123e3f">
+  <meta name="description" content="扮演 Ann，走進海岸故事。國中英語 Lesson 6 第一人稱沉浸式閱讀遊戲。">
+  <title>最後一根吸管 · The Last Straw</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="world" aria-label="第一人稱 3D 海岸場景"></div>
+  <div class="vignette"></div>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="最後一根吸管首頁"><span class="brand-icon">≈</span><span>THE LAST STRAW<small>一段關於選擇的海岸故事</small></span></a>
+    <div class="top-actions"><span class="lesson">ENGLISH / LESSON 06</span><button id="journal-btn">閱讀手帳 <span>J</span></button><button id="help-btn" aria-label="操作說明">?</button></div>
+  </header>
+  <main>
+    <section id="welcome" class="welcome">
+      <div class="eyebrow"><span></span> FIRST-PERSON READING JOURNEY</div>
+      <p class="hero-en">A small choice.<br> A different ocean.</p>
+      <h1>最後一根<br><span>吸管</span><i>。</i></h1>
+      <p class="hero-description">這一次，你是 Ann。<br>從一次海邊野餐出發，跟著英文線索，<br>為海洋寫下不一樣的結局。</p>
+      <div class="hero-actions"><button id="start-btn" class="primary">走進故事 <span>↗</span></button><button id="restart-btn" class="text-button" hidden>重新開始</button></div>
+      <div class="hero-meta"><span>4 個章節</span><span>約 20–25 分鐘</span><span>依自己的步調閱讀</span></div>
+    </section>
+    <aside id="mission" class="mission" hidden><div class="eyebrow" id="chapter-label"></div><h2 id="mission-title"></h2><p id="mission-description"></p><div class="mission-actions"><button id="guide-btn" class="primary">帶我前往 <span>→</span></button><button id="read-btn">閱讀現場</button></div></aside>
+    <div id="crosshair" hidden>+</div>
+    <button id="interaction" hidden></button>
+    <div class="scene-caption" id="scene-caption"><span class="live-dot"></span> PANCAKE COAST <span class="caption-line"></span> 16:42 · 海風輕拂</div>
+    <div class="location-tag" id="location-tag">01 / THE PICNIC<span>故事，從一根吸管開始。</span></div>
+    <nav class="chapters" aria-label="故事章節"><div class="chapter-track"></div><button data-chapter="0"><span>01</span>海邊野餐<small>THE PICNIC</small></button><button data-chapter="1"><span>02</span>海洋線索<small>OCEAN CLUES</small></button><button data-chapter="2"><span>03</span>採取行動<small>TAKE ACTION</small></button><button data-chapter="3"><span>04</span>一封來信<small>THE LETTER</small></button></nav>
+    <div class="bottom-note"><span id="save-status">THREE.JS · 互動閱讀體驗</span><button id="motion-btn">動態效果：開</button></div>
+    <div id="move-controls" hidden aria-label="觸控移動"><button data-move="forward" aria-label="前進">↑</button><div><button data-move="left" aria-label="向左移動">←</button><button data-move="backward" aria-label="後退">↓</button><button data-move="right" aria-label="向右移動">→</button></div></div>
+    <button id="look-btn" hidden>滑鼠觀看</button>
+  </main>
+  <dialog id="reader" aria-labelledby="reader-title"><div class="reader-header"><span id="reader-kicker"></span><button id="close-reader" aria-label="關閉閱讀">×</button></div><div id="reader-content"></div><footer class="reader-footer"><span id="page-indicator"></span><button id="previous-page">← 上一段</button><button id="next-page" class="primary">繼續閱讀 →</button></footer></dialog>
+  <dialog id="notebook" aria-labelledby="notebook-title"><div class="reader-header"><span>ANN'S FIELD NOTES</span><button id="close-notebook" aria-label="關閉手帳">×</button></div><h2 id="notebook-title">我的海岸手帳</h2><div class="notebook-tabs"><button data-tab="notes" class="selected">閱讀紀錄</button><button data-tab="words">單字口袋</button><button data-tab="practice">教材練習</button><button data-tab="review">錯題回顧</button></div><div id="notebook-content"></div></dialog>
+  <dialog id="help" aria-labelledby="help-title"><div class="reader-header"><span>BEFORE THE JOURNEY</span><button id="close-help" aria-label="關閉說明">×</button></div><h2 id="help-title">慢慢走，也慢慢讀。</h2><p>你將以 Ann 的視角探索海岸。依序完成四章的閱讀與任務，就能寄出自己的海岸來信。</p><ul><li><b>W A S D／方向鍵</b>：移動。先點「滑鼠觀看」，再移動滑鼠環顧。</li><li><b>拖曳畫面</b>：也能轉動視角。手機使用左下角方向按鈕。</li><li><b>E</b>：靠近章節標記時閱讀。<b>Esc</b>：釋放滑鼠／關閉閱讀。</li><li><b>帶我前往</b>：自動走到目前章節；「閱讀現場」需先抵達。</li><li><b>J／閱讀手帳</b>：查看單字、教材練習與錯題。</li></ul><p>不計時、不扣生命。英文先讀，遇到困難再展開中文提示。進度保存在這個瀏覽器；無痕模式或清除資料可能使進度消失。</p><p class="source-note">依據資料夾內 Lesson 6 的 8 張教材照片製作。敘事銜接與互動題會標示為遊戲改編。閱讀文章的結尾未拍完整，未補造原文。本遊戲沒有使用教材音軌。</p><button id="help-done" class="primary">我準備好了</button></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
