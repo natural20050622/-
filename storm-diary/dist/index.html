@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f3f1e9">
+  <meta name="description" content="走進 Adam 的颱風公寓與 Bella 的地震回憶，在 3D 場景中探索、閱讀與理解國中英文 Lesson 5。">
+  <title>風暴日記 — 走進故事，讀懂世界</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="風暴日記首頁"><span class="brand-mark">◈</span><span>風暴日記<small>THE STORM DIARIES</small></span></a>
+    <span class="course-tag">ENGLISH EXPLORER <i></i> LESSON 05</span>
+    <div class="header-actions"><button id="motion" class="icon-button" aria-pressed="false" title="減少動態">◌<span>減少動態</span></button><button id="journal" class="journal-button">▤ <span>我的日記</span><b id="total-progress">0 / 8</b></button></div>
+  </header>
+  <main>
+    <section class="intro">
+      <div><div class="eyebrow"><span></span> 一場冒險，兩段真實的學習</div><h1>走進故事，<em>讀懂世界。</em></h1><p>聽見風雨，看見線索。用英文，拼出故事的全貌。</p></div>
+      <div class="intro-note"><span>EXPLORE · READ · DISCOVER</span><p>每一個物件，都藏著一段故事。</p></div>
+    </section>
+    <section class="game-shell" aria-label="沉浸式閱讀遊戲">
+      <aside class="chapter-panel">
+        <div class="panel-label">YOUR EXPEDITION <span>探索旅程</span></div>
+        <button class="chapter-card active" data-chapter="typhoon"><span class="chapter-number">01</span><span class="chapter-text"><small>WHEN A TYPHOON TEACHES A LESSON</small><strong>颱風教會我的事</strong><span>Adam 的公寓 · 颱風前後</span></span><span class="chapter-arrow">↗</span><span class="chapter-count" id="typhoon-count">0 / 4</span></button>
+        <button class="chapter-card" data-chapter="earthquake"><span class="chapter-number">02</span><span class="chapter-text"><small>A MOMENT IN BANGKOK</small><strong>那一刻，地板搖晃了</strong><span>Bella 的回憶 · 曼谷餐廳</span></span><span class="chapter-arrow">↗</span><span class="chapter-count" id="earthquake-count">0 / 4</span></button>
+        <div class="mission-heading"><span>本章探索</span><span id="chapter-progress">0 / 4</span></div>
+        <div id="mission-list" class="mission-list"></div>
+        <div class="field-note"><span>✧ EXPLORER'S NOTE</span><p id="field-note">有時候，讀懂一句提醒，<br>就能改變接下來的故事。</p></div>
+      </aside>
+      <div class="world-panel">
+        <div class="scene-top"><div><span id="scene-kicker">CHAPTER 01 / ADAM'S APARTMENT</span><h2 id="scene-title">風雨將至的午後</h2></div><div class="weather-pill" id="weather">☂ <span>颱風接近中</span></div></div>
+        <div id="scene" aria-label="3D 場景，拖曳旋轉，點選線索探索"><div id="loading"><span class="loading-ring"></span>正在打開故事的世界…</div><div id="hotspots"></div></div>
+        <div class="scene-bottom"><span class="location"><i></i><span id="location">TAIWAN · ADAM'S APARTMENT</span></span><span class="gesture">拖曳旋轉 · 點選標記閱讀</span><button id="reset-camera" class="icon-button" title="回到初始視角">⌖<span>重設視角</span></button></div>
+      </div>
+    </section>
+    <section class="bottom-strip"><div><span class="step-index">01</span><span><b>探索場景</b><small>點選發光的線索</small></span></div><span class="step-line"></span><div><span class="step-index">02</span><span><b>走進文本</b><small>閱讀故事，找出證據</small></span></div><span class="step-line"></span><div><span class="step-index">03</span><span><b>拼出理解</b><small>解開任務，留下日記</small></span></div><button id="glossary">Aa <span>隨身單字本</span> ↗</button></section>
+  </main>
+  <footer><span>THE STORM DIARIES <i>—</i> 每一次閱讀，都是一次探索。</span><span>國中英語 · Lesson 5 · 3D 閱讀實驗室</span></footer>
+  <dialog id="reader" aria-labelledby="reader-title"><div class="reader-layout"><div class="reading-pane"><div class="reader-top"><span id="reader-kicker" class="eyebrow"></span><button class="close-button mobile-close" data-close="reader" aria-label="關閉閱讀">×</button></div><h2 id="reader-title"></h2><div id="reader-meta"></div><div class="reading-tools"><button id="translate" aria-pressed="false">文 顯示中文</button><button id="speak">◖ 朗讀英文</button><span>點選標示單字可看解釋</span></div><div id="passage" class="passage"></div><div id="translation" class="translation" hidden></div><div class="source-note" id="source-note"></div></div><div class="question-pane"><button class="close-button desktop-close" data-close="reader" aria-label="關閉閱讀">×</button><div class="question-kicker" id="question-kicker"></div><div id="question-area"></div></div></div></dialog>
+  <dialog id="notebook" aria-labelledby="notebook-title"><div class="notebook-content"><button class="close-button" data-close="notebook" aria-label="關閉視窗">×</button><div id="notebook-body"></div></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
